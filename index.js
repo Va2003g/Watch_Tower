@@ -34,3 +34,32 @@ hamburger.addEventListener('click',showResNav);
 back.addEventListener('click',hideResNav);
 loginicon.addEventListener('click',showlogin);
 cancel.addEventListener('click',hidelogin);
+
+
+var instagram = document.querySelector(".insta");
+instagram.addEventListener('click',()=>{
+
+    // window.location.href="https://www.instagram.com/",'_blank';
+    window.open(
+        'https://www.instagram.com/',
+        '_blank' 
+      );
+});
+var facebook = document.querySelector(".face");
+facebook.addEventListener('click',()=>{
+
+    // window.location.href="https://www.instagram.com/",'_blank';
+    window.open(
+        'https://www.facebook.com/',
+        '_blank' 
+      );
+});
+var twitter = document.querySelector(".x");
+twitter.addEventListener('click',()=>{
+
+    // window.location.href="https://www.instagram.com/",'_blank';
+    window.open(
+        'https://www.x.com/',
+        '_blank' 
+      );
+});
