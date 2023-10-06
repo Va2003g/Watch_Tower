@@ -34,6 +34,10 @@
 
 }
 
+a{
+  text-decoration: none;
+  color:black;
+}
 header {
   background-color: #e3e6f3;
   box-sizing: border-box;
@@ -41,6 +45,8 @@ header {
   display: flex;
   flex-direction: column;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+  position: sticky;
+  top:0;
 }
 
 .loginContainer {

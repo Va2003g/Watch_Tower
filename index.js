@@ -63,3 +63,8 @@ twitter.addEventListener('click',()=>{
         '_blank' 
       );
 });
+
+var men = document.querySelector("#men")
+function menWatches(){
+    men.scrollIntoView();
+}
