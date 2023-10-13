@@ -1,4 +1,4 @@
-var hamburger = document.getElementById('hamburger');
+// var hamburger = document.getElementById('hamburger');
 var res_nav = document.getElementById('res-nav');
 var back = document.getElementById("back");
 var login = document.getElementsByClassName("loginContainer");
@@ -30,8 +30,8 @@ function hideResNav(){
     res_nav.style.visibility="hidden";
 }
 
-hamburger.addEventListener('click',showResNav);
-back.addEventListener('click',hideResNav);
+// hamburger.addEventListener('click',showResNav);
+// back.addEventListener('click',hideResNav);
 loginicon.addEventListener('click',showlogin);
 cancel.addEventListener('click',hidelogin);
 
@@ -67,4 +67,18 @@ twitter.addEventListener('click',()=>{
 var men = document.querySelector("#men")
 function menWatches(){
     men.scrollIntoView();
+}
+
+var userName;
+function userLogin(event)
+{
+    userName = event.target[0].value;
+    event.preventDefault();
+    updateName(userName);
+    hidelogin();
+}
+
+function updateName(name)
+{
+    loginicon.innerText = name;
 }
