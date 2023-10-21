@@ -47,7 +47,7 @@ header {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
   position: sticky;
   top:0;
-  z-index: 10;
+  z-index: 1;
 }
 
 .loginContainer {
@@ -392,12 +392,9 @@ footer {
   font-size: 1.2rem;
   color: rgb(97, 97, 115);
   gap:10px;
+  margin-top:5rem;
 }
 
-/* #copyright {
-  font-size: 1.2rem;
-  color: rgb(97, 97, 115);
-} */
 
 .social ul
 {
