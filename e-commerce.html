@@ -63,8 +63,8 @@
                             <a href="#men" class="green">Shop</a>
                             <div class="div"></div>
                         </li>
-                        <li>
-                            <i class="fas fa-shopping-cart"></i>
+                        <li id="cart-icon">
+                            <i class="fas fa-shopping-cart" ></i>
                             <span class="green">Cart</span>
                             <div class="div"></div>
                         </li>
@@ -97,6 +97,30 @@
                 </div>
             </div>
 
+            <div class="cart" style="color: black; ">
+                <h2 class="cart-title">Your Cart</h2>
+
+                <!-- CONTENT  -->
+                <div class="cart-content">
+
+
+                </div>
+
+                <!-- TOTAL   -->
+                <div class="total">
+                    <div class="total-title">Total</div>
+                    <div class="total-price">₹0</div>
+                </div>
+                <!-- BUY BUTTON  -->
+                <button type="button" class="btn-buy">Buy Now</button>
+                <!-- CART CLOSE  -->
+                <svg id="cart-close" xmlns="http://www.w3.org/2000/svg" height="1em"
+                    viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                    <path
+                        d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
+                </svg>
+            </div>
+
         </header>
 
         <section class="hero-section">
@@ -115,9 +139,9 @@
         <main>
 
             <div class="content">
-                
+
                 <div id="men">
-                    <div class="headingItems" >
+                    <div class="headingItems">
                         <h4>Men's Watches</h4>
                     </div>
 
@@ -127,7 +151,7 @@
                 </div>
 
                 <div id="women">
-                    <div class="headingItems" >
+                    <div class="headingItems">
                         <h4>Womens's Watches</h4>
                     </div>
                     <div id="imagesw" class="images">
@@ -145,13 +169,13 @@
                 </div>
 
                 <div id="wall">
-                    <div class="headingItems" >
+                    <div class="headingItems">
                         <h4>Wall Clocks</h4>
                     </div>
                     <div id="imagesc" class="images">
-                     
+
                     </div>
-                </div> 
+                </div>
 
             </div>
 
@@ -187,6 +211,7 @@
 
     <script src="index.js"></script>
     <script src="content.js"></script>
+    <script src="cart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>

@@ -6,6 +6,10 @@
   --tx1-color: #45a29e;
   --tx2-color: #f13c20;
   --tx3-color: #d79922;
+  --main-color: #fd4646;
+  --sec-color: #ffffff;
+  --text-color: #171427;
+  --bg-color: #fff;
 }
 
 * {
@@ -114,6 +118,104 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+}
+.cart{
+  position: fixed;
+  top: 0;
+  right: 0;
+  right: -100%; 
+  width: 360px;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: -2px solid 4px hsl(0 4% 15% / 10%);
+  border: 1px solid #fd4646;
+  transition: 1.5s;
+  font-family: 'Poppins', sans-serif;
+}
+.cart.active{
+  right: 0;
+  transition: .5s;
+}
+.cart-title{
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 2rem;
+}
+.cart-box{
+  display: grid;
+  grid-template-columns: 32% 50% 18%;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.cart-img{
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  padding: 10px;
+}
+.detail-box{
+  display: grid;
+  row-gap: .5rem;
+}
+.cart-product-title{
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+.cart-price{
+  font-weight: 500;
+}
+.cart-quantity{
+  border: 1px solid var(--text-color);
+  outline-color: var(--main-color);
+  width: 2.4rem;
+  text-align: center;
+  font-size: 1rem;
+}
+.cart-remove{
+  font-size: 24px;
+  color: var(--main-color);
+  cursor: pointer;
+}
+.total{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+  border-top: 1px solid var(--text-color);
+}
+.total-title{
+  font-size: 1rem;
+  font-weight: 600;
+}
+.total-price{
+  margin-left: .5rem;
+  color: #fd4646;
+}
+.btn-buy{
+  display: flex;
+  margin: 1.5rem auto 0 auto;
+  padding: 12px 20px;
+  border: none;
+  background-color: var(--main-color);
+  color: var(--bg-color);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+.btn-buy:hover{
+  background-color: var(--text-color);
+}
+#cart-close{
+  position: absolute;
+  top: 1rem;
+  right: .8rem;
+  font-size: 2rem;
+  color: var(--text-color);
+  cursor: pointer;
 }
 /* #login:hover .loginContainer {
     transform: scale(1);
@@ -299,6 +401,7 @@ i {
   justify-content: center;
   align-items: center;
   gap:80px;
+  
   /* background-color: rgba(250, 235, 215, 0); */
 }
 

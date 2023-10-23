@@ -40,8 +40,8 @@ const menData = [
     let temp = `<div class="product-box">
     <img src="./images/${menData[i].image}.jpg" alt="" class="product-img">
     <h2 class="product-title">${menData[i].title}</h2>
-    <span class="product-price">Rs:- ${Math.round(
-      Math.random() * 10000 + 100
+    <span class="product-price">₹${(Math.round(
+      Math.random() * 10000 + 100).toFixed(2)
     )}</span>
     <i class="fas fa-shopping-cart add-cart"></i>
   </div>`;
@@ -89,8 +89,8 @@ const menData = [
     let temp = `<div class="product-box">
     <img src="./images/${womenData[i].image}.jpg" alt="" class="product-img">
     <h2 class="product-title">${womenData[i].title}</h2>
-    <span class="product-price">Rs:- ${Math.round(
-      Math.random() * 10000 + 100
+    <span class="product-price">₹${(Math.round(
+      Math.random() * 10000 + 100).toFixed(2)
     )}</span>
     <i class="fas fa-shopping-cart add-cart"></i>
   </div>`;
@@ -144,8 +144,8 @@ const menData = [
       kidsData[i].image
     }.${extension}" alt="" class="product-img">
     <h2 class="product-title">${kidsData[i].title}</h2>
-    <span class="product-price">Rs:- ${Math.round(
-      Math.random() * 10000 + 100
+    <span class="product-price">₹${(Math.round(
+      Math.random() * 10000 + 100).toFixed(2)
     )}</span>
     <i class="fas fa-shopping-cart add-cart"></i>
   </div>`;
@@ -196,8 +196,8 @@ const menData = [
       wallData[i].image
     }.${extension}" alt="" class="product-img">
     <h2 class="product-title">${wallData[i].title}</h2>
-    <span class="product-price">Rs:- ${Math.round(
-      Math.random() * 10000 + 100
+    <span class="product-price">₹${(Math.round(
+      Math.random() * 10000 + 100).toFixed(2)
     )}</span>
     <i class="fas fa-shopping-cart add-cart"></i>
   </div>`;
