@@ -17,6 +17,7 @@ window.addEventListener("load", function () {
   if (name!=undefined && name!=="Login") {
     chosenItemsArray = JSON.parse(localStorage.getItem(name));
     showInCart();
+    updateTotal();
   }
 });
 
@@ -28,6 +29,12 @@ for (let a of add_cart_btn) {
 
 
 function addInCart(event) {
+  let userLoginName = sessionStorage.getItem("UserName");
+  if(userLoginName=="Login" || userLoginName==undefined)
+  {
+    alert("Kindly Login first!!")
+    return;
+  }
   let target = event.target.parentElement;
   // console.log(target);
   let title = target.querySelector(".product-title").innerHTML;
@@ -46,7 +53,6 @@ function addInCart(event) {
 
   chosenItemsArray.push(chosenItems);
 
-  let userLoginName = sessionStorage.getItem("UserName");
   if (userLoginName !== "Login" && userLoginName != undefined) {
    localStorage.setItem(userLoginName, JSON.stringify(chosenItemsArray));
   }
@@ -64,19 +70,17 @@ function addInCart(event) {
     cartContent.appendChild(newNode);
 
     update();
+    updateTotal();
 }
 
-function check(chosenItems, chosenItemsArray) {
-  for (let a in chosenItemsArray) {
-    if (JSON.stringify(chosenItemsArray[a]) === JSON.stringify(chosenItems))
-      return a;
-  }
-  return -1;
-}
 
 function showInCart() {
   let userLoginName = sessionStorage.getItem("UserName");
   
+  if(localStorage.getItem(userLoginName)==undefined)
+  {
+    return;
+  }
   let data = JSON.parse(localStorage.getItem(userLoginName));
   
   for (let obj of data) {
@@ -92,6 +96,7 @@ function showInCart() {
     cartContent.appendChild(newNode);
   }
   update();
+  updateTotal();
 }
 
 function CartBoxComponent(title, price, imgSrc) {
@@ -116,6 +121,27 @@ function update()
 {
   let deleteItem = document.querySelectorAll('.cart-remove');
   deleteItem.forEach((btn)=>{btn.addEventListener('click',removeFromCart)});
+
+
+}
+
+function updateTotal() {
+  let cartBoxes = document.querySelectorAll(".cart-box");
+  const totalElement = cart.querySelector(".total-price");
+  let total = 0;
+  cartBoxes.forEach((cartBox) => {
+    let priceElement = cartBox.querySelector(".cart-price");
+    let price = parseFloat(priceElement.innerHTML.replace("₹", ""));
+    let quantity = cartBox.querySelector(".cart-quantity").value;
+    total += price * quantity;
+  });
+
+  // keep 2 digits after the decimal point
+  total = total.toFixed(2);
+  // or you can use also
+  // total = Math.round(total * 100) / 100;
+
+  totalElement.innerHTML = "₹" + total;
 }
 
 function removeFromLocalStorage(data)
@@ -137,5 +163,19 @@ function removeFromCart(event)
 {
   let dataToBeRemoved = event.target.parentElement.parentElement;
   dataToBeRemoved.remove();
+  updateTotal();
   removeFromLocalStorage(dataToBeRemoved);
 }
+
+let buybtn = document.querySelector('.btn-buy');
+
+buybtn.addEventListener('click',()=>{
+  if(chosenItemsArray.length>0)
+  {
+    alert("Your order is on the way.");
+  }
+  else
+  {
+    alert("Your cart is empty!!");
+  }
+});

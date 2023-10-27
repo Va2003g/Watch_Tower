@@ -68,6 +68,12 @@ header {
   transition: transform 0.8s;
 }
 
+.logout{
+  position: absolute;
+  top:55%;
+  visibility: hidden;
+  cursor: pointer;
+}
 .login {
   /* position: absolute; */
   visibility: visible;
@@ -119,6 +125,7 @@ header {
   justify-content: space-between;
   align-items: baseline;
 }
+
 .cart{
   position: fixed;
   top: 0;
@@ -383,14 +390,14 @@ i {
 
 
 
-@media screen and (max-height: 450px) {
+/* @media screen and (max-height: 450px) {
   .sidenav {
     padding-top: 15px;
   }
   .sidenav a {
     font-size: 18px;
   }
-}
+} */
 
 /* main */
 /* men-section */
@@ -416,6 +423,7 @@ i {
 .content img{
   width:270px;
   height: 270px;
+  box-sizing: border-box;
 }
 
 .images{

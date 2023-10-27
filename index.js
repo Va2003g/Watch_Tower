@@ -42,18 +42,52 @@ function userLogin(event) {
   event.preventDefault();
   updateName(userName);
   hidelogin();
+  displayLogout();
 }
 
 window.addEventListener("load", function () {
   let name = sessionStorage.getItem("UserName");
   if (name) {
     loginicon.innerText = name;
+    displayLogout();
   } else {
     loginicon.innerText = "Login";
   }
 });
 
 function updateName(name) {
+
   loginicon.innerText = name;
-  sessionStorage.setItem("UserName", name);
+  if(name!="Login")
+  {
+    sessionStorage.setItem("UserName", name);
+    showInCart();
+  }
+  else
+  {
+    sessionStorage.clear();
+  }
 }
+
+let logout = document.querySelector(".logout");
+
+function displayLogout() {
+  if (loginicon.innerText != "Login") {
+    logout.style.visibility = "visible";
+  }
+  else
+  {
+    logout.style.visibility = "hidden";
+  }
+}
+
+logout.addEventListener('click',()=>{
+  loginicon.innerText = "Login";
+  sessionStorage.clear();
+  logout.style.visibility = "hidden";
+  const cartContent = document.querySelector(".cart-content");
+  let child = document.querySelectorAll(".cart-content > div");
+  child.forEach((c)=>{cartContent.removeChild(c)});
+  updateTotal();
+});
+
