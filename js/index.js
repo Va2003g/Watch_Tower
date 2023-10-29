@@ -1,18 +1,18 @@
 var login = document.getElementsByClassName("loginContainer");
 var body = document.getElementsByTagName("body");
-var loginicon = document.getElementById("loginicon");
-var cancel = document.getElementById("imagecross");
+var loginIcon = document.getElementById("loginIcon");
+var cancel = document.getElementById("imageCross");
 
-function showlogin() {
+function showLogin() {
   login[0].style.transform = "scaleY(1)";
 }
 
-function hidelogin() {
+function hideLogin() {
   login[0].style.transform = "scaleY(0)";
 }
 
-loginicon.addEventListener("click", showlogin);
-cancel.addEventListener("click", hidelogin);
+loginIcon.addEventListener("click", showLogin);
+cancel.addEventListener("click", hideLogin);
 
 var instagram = document.querySelector(".insta");
 instagram.addEventListener("click", () => {
@@ -41,23 +41,23 @@ function userLogin(event) {
   userName = event.target[0].value;
   event.preventDefault();
   updateName(userName);
-  hidelogin();
+  hideLogin();
   displayLogout();
 }
 
 window.addEventListener("load", function () {
   let name = sessionStorage.getItem("UserName");
   if (name) {
-    loginicon.innerText = name;
+    loginIcon.innerText = name;
     displayLogout();
   } else {
-    loginicon.innerText = "Login";
+    loginIcon.innerText = "Login";
   }
 });
 
 function updateName(name) {
 
-  loginicon.innerText = name;
+  loginIcon.innerText = name;
   if(name!="Login")
   {
     sessionStorage.setItem("UserName", name);
@@ -72,7 +72,7 @@ function updateName(name) {
 let logout = document.querySelector(".logout");
 
 function displayLogout() {
-  if (loginicon.innerText != "Login") {
+  if (loginIcon.innerText != "Login") {
     logout.style.visibility = "visible";
   }
   else
@@ -82,7 +82,7 @@ function displayLogout() {
 }
 
 logout.addEventListener('click',()=>{
-  loginicon.innerText = "Login";
+  loginIcon.innerText = "Login";
   sessionStorage.clear();
   logout.style.visibility = "hidden";
   const cartContent = document.querySelector(".cart-content");
@@ -90,4 +90,3 @@ logout.addEventListener('click',()=>{
   child.forEach((c)=>{cartContent.removeChild(c)});
   updateTotal();
 });
-
