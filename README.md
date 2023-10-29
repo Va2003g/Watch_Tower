@@ -23,6 +23,7 @@ The Watch Tower is a user-friendly web application developed to offer a wide ran
 - **Shopping Cart:** Add and manage products in your cart.
 - **Cart History:** Users can track their cart history and products they chosen.
 - **User Login:** Users can login their account in the website and thus ensures security.
+- **Searching** Users can easily search their favorite items.
 
 ## Getting Started
 

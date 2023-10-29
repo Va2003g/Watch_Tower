@@ -25,7 +25,6 @@ inputField.addEventListener("input", () => {
       obj.title.toLowerCase().includes(inputField.value.toLowerCase()) == true
   );
   showOnWindow(searchData);
-  console.log(searchData);
 });
 
 function createItem(img, title) {
@@ -42,18 +41,17 @@ function createItem(img, title) {
   } else {
     category = "Unknown Category";
   }
-
-  //   return `<li class="searchItem" id="${img}">
-  //             <img src="./images/${img}.jpg" alt="" class="imageSearch">
-  //             <p class="title">${title}</p>
-  //             <p class="category">${category}</p>
-  //           </li>`;
-
+  
+  var extension = "jpg";
+  if((img.includes("k") && (img!= "k8" && img!="k7"))|| img.includes("c"))
+  {
+    extension = "jpeg";
+  }
   const listItem = document.createElement("li");
   listItem.className = "searchItem";
   listItem.id = img;
   listItem.innerHTML = `
-  <img src="./images/${img}.jpg" alt="" class="imageSearch">
+  <img src="./images/${img}.${extension}" alt="" class="imageSearch">
   <p class="title">${title}</p>
   <p class="category">${category}</p>`;
   return listItem;
