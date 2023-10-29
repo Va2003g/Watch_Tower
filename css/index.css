@@ -449,9 +449,12 @@ i {
 }
 .product-box:hover{
   cursor: pointer;;
-  padding: 20px;
   transition: .4s;
   border-radius: 10px;
+}
+.product-box:hover .product-img{
+  transform: scale(0.9);
+  transition: ease-in-out 0.8s;
 }
 .product-img{
   position: relative;
