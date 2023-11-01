@@ -73,6 +73,7 @@ function moveToThatItem(event) {
   closeSearch.click();
   var target = document.getElementById(id);
   target.scrollIntoView();
+  target.classList.add("animation");
 }
 
 //Search handling

@@ -433,6 +433,19 @@ i {
   gap:25px;
 }
 
+.animation{
+  animation: colorChange 1.8s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+@keyframes colorChange {
+  from{
+    background-color: white;
+  }
+  to{
+    background-color:#ccc;
+  }
+}
+
 #men{
   margin-top:5rem;
 }
