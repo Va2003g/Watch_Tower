@@ -2,7 +2,7 @@ var login = document.getElementsByClassName("loginContainer");
 var body = document.getElementsByTagName("body");
 var loginIcon = document.getElementById("loginIcon");
 var cancel = document.getElementById("imageCross");
-
+var heroSection = document.getElementsByClassName("hero-section");
 function showLogin() {
   login[0].style.transform = "scaleY(1)";
 }
@@ -10,6 +10,12 @@ function showLogin() {
 function hideLogin() {
   login[0].style.transform = "scaleY(0)";
 }
+
+function toTop()
+{
+  heroSection[0].scrollIntoView();
+}
+
 
 loginIcon.addEventListener("click", showLogin);
 cancel.addEventListener("click", hideLogin);

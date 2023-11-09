@@ -11,6 +11,7 @@ closeSearch.addEventListener("click", () => {
 });
 
 openSearch[0].addEventListener("click", () => {
+  toTop();
   result.style.transform = "scaleY(1)";
 });
 
